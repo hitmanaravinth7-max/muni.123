@@ -1,0 +1,122 @@
+package com.example.ui.i18n
+
+enum class AppLanguage(val code: String, val displayName: String) {
+    ENGLISH("en", "English"),
+    HINDI("hi", "हिंदी")
+}
+
+object LanguageManager {
+    fun getString(key: String, language: AppLanguage): String {
+        val strings = when (language) {
+            AppLanguage.ENGLISH -> englishStrings
+            AppLanguage.HINDI -> hindiStrings
+        }
+        return strings[key] ?: englishStrings[key] ?: key
+    }
+
+    private val englishStrings = mapOf(
+        "app_title" to "LifeLink",
+        "app_subtitle" to "Emergency Blood Finder & Bank Network",
+        "sos_button" to "SOS EMERGENCY",
+        "sos_desc" to "One-tap emergency blood request & instant hotline",
+        "quick_search" to "Find Blood Units",
+        "broadcast_request" to "Post Emergency Request",
+        "nearby_donors" to "Find Nearby Donors",
+        "donor_hub" to "Donor Dashboard",
+        "admin_portal" to "Blood Bank Stock",
+        "nav_home" to "Home",
+        "nav_search" to "Availability",
+        "nav_emergency" to "Requests",
+        "nav_donors" to "Donors",
+        "nav_admin" to "Bank Admin",
+        "nav_education" to "Guide",
+        "nav_map" to "Radar Map",
+        "filter_all" to "All",
+        "blood_group" to "Blood Group",
+        "component" to "Component",
+        "city" to "City / Area",
+        "units_available" to "Units Available",
+        "last_updated" to "Last updated",
+        "call_now" to "Call Now",
+        "directions" to "Directions",
+        "urgency_critical" to "CRITICAL (Immediate)",
+        "urgency_24h" to "Within 24 Hours",
+        "urgency_planned" to "Planned / Scheduled",
+        "broadcast_alert" to "Broadcast Emergency Alert",
+        "open_status" to "OPEN REQUEST",
+        "fulfilled_status" to "FULFILLED",
+        "mark_fulfilled" to "Mark as Fulfilled",
+        "eligible_badge" to "Eligible to Donate",
+        "ineligible_badge" to "Ineligible (Recovery Period)",
+        "days_left" to "days remaining",
+        "lives_saved" to "Estimated Lives Impacted",
+        "donation_history" to "Donation History",
+        "stock_update_title" to "Blood Bank Stock Manager",
+        "low_stock_warning" to "LOW STOCK ALERT (< 5 units)",
+        "compatibility_title" to "Blood Compatibility Matrix",
+        "contact_donor" to "Contact Donor",
+        "phone_hidden" to "Phone hidden for privacy",
+        "request_contact" to "Reveal & Request Contact",
+        "login_title" to "Sign In to LifeLink",
+        "register_title" to "Create LifeLink Account",
+        "role_donor" to "Volunteer Donor",
+        "role_requester" to "Patient / Requester",
+        "role_admin" to "Blood Bank Staff",
+        "consent_text" to "I consent to receiving emergency blood requests and alerts via phone/SMS.",
+        "myths_and_facts" to "Myths vs Facts",
+        "eligibility_guide" to "Donation Eligibility Criteria"
+    )
+
+    private val hindiStrings = mapOf(
+        "app_title" to "लाइफलिंक (LifeLink)",
+        "app_subtitle" to "आपातकालीन रक्त उपलब्धता एवं डोनर खोज",
+        "sos_button" to "SOS आपातकालीन मदद",
+        "sos_desc" to "तत्काल आपातकालीन रक्त अनुरोध और हॉटलाइन",
+        "quick_search" to "रक्त यूनिट खोजें",
+        "broadcast_request" to "आपातकालीन अनुरोध भेजें",
+        "nearby_donors" to "निकटतम रक्तदाता खोजें",
+        "donor_hub" to "डोनर डैशबोर्ड",
+        "admin_portal" to "ब्लड बैंक स्टॉक",
+        "nav_home" to "होम",
+        "nav_search" to "उपलब्धता",
+        "nav_emergency" to "अनुरोध",
+        "nav_donors" to "रक्तदाता",
+        "nav_admin" to "बैंक एडमिन",
+        "nav_education" to "मार्गदर्शिका",
+        "nav_map" to "रडार मैप",
+        "filter_all" to "सभी",
+        "blood_group" to "रक्त समूह",
+        "component" to "घटक",
+        "city" to "शहर / क्षेत्र",
+        "units_available" to "उपलब्ध यूनिट्स",
+        "last_updated" to "अंतिम अपडेट",
+        "call_now" to "कॉल करें",
+        "directions" to "दिशा-निर्देश",
+        "urgency_critical" to "अति गंभीर (तत्काल)",
+        "urgency_24h" to "24 घंटे के भीतर",
+        "urgency_planned" to "नियोजित सर्जरी",
+        "broadcast_alert" to "आपातकालीन अलर्ट प्रसारित करें",
+        "open_status" to "सक्रिय अनुरोध",
+        "fulfilled_status" to "पूर्ण हुआ",
+        "mark_fulfilled" to "पूर्ण चिह्नित करें",
+        "eligible_badge" to "रक्तदान के लिए पात्र",
+        "ineligible_badge" to "अपात्र (रिकवरी अवधि)",
+        "days_left" to "दिन शेष",
+        "lives_saved" to "बचाए गए संभावित जीवन",
+        "donation_history" to "रक्तदान इतिहास",
+        "stock_update_title" to "ब्लड बैंक स्टॉक प्रबंधन",
+        "low_stock_warning" to "कम स्टॉक चेतावनी (< 5 यूनिट)",
+        "compatibility_title" to "रक्त अनुकूलता मैट्रिक्स",
+        "contact_donor" to "डोनर से संपर्क करें",
+        "phone_hidden" to "गोपनीयता हेतु नंबर सुरक्षित",
+        "request_contact" to "नंबर देखें व संपर्क करें",
+        "login_title" to "लाइफलिंक में साइन इन करें",
+        "register_title" to "नया खाता बनाएं",
+        "role_donor" to "रक्तदाता (Donor)",
+        "role_requester" to "मरीज / जरूरतमंद",
+        "role_admin" to "ब्लड बैंक एडमिन",
+        "consent_text" to "मैं आपातकाल में संपर्क और अलर्ट प्राप्त करने की सहमति देता/देती हूँ।",
+        "myths_and_facts" to "भ्रम और तथ्य",
+        "eligibility_guide" to "रक्तदान पात्रता मानदंड"
+    )
+}

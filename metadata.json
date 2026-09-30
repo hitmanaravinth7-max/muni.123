@@ -1,0 +1,6 @@
+{
+  "name": "LifeLink",
+  "description": "Blood availability search and emergency donor finder connecting blood banks, patients, and eligible donors during critical medical emergencies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
